@@ -1,11 +1,16 @@
 {
   "name": "@dank-inc/use-get",
   "description": "A simple typscript react hook to get you that sweet sweet data from an endpoint.",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "repository": {
+    "url": "https://github.com/dank-inc/use-get"
+  },
   "main": "dist/index.js",
   "author": "Elijah Lucian",
   "license": "ISC",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "lint": "tsc --noEmit",
     "audit": "npm audit --audit-level=\"moderate\"",
