@@ -1,2 +1,2 @@
-export { useGet } from "./use-get";
-export { useApi } from "./use-api";
+export { useGet } from "./lib/use-get";
+export { usePromise } from "./lib/use-promise";

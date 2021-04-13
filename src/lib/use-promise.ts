@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Response } from "./types";
+import { Response } from "../types";
 
 // TODO: Objects
 type Res<T> =
