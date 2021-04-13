@@ -1,21 +1,30 @@
 {
   "name": "@dank-inc/use-get",
-  "description": "A simple typscript react hook to get you that sweet sweet data from an endpoint.",
-  "version": "0.2.0",
+  "version": "0.3.0",
+  "author": "Elijah Lucian",
+  "description": "A few typscript react hook to get you that sweet sweet data from an endpoint.",
   "repository": {
     "url": "https://github.com/dank-inc/use-get"
   },
-  "main": "dist/index.js",
-  "author": "Elijah Lucian",
-  "license": "ISC",
   "files": [
     "dist"
+  ],
+  "main": "dist/index.js",
+  "license": "ISC",
+  "keywords": [
+    "react",
+    "api",
+    "promise",
+    "hook",
+    "async",
+    "loading state",
+    "convenient"
   ],
   "scripts": {
     "lint": "tsc --noEmit",
     "audit": "npm audit --audit-level=\"moderate\"",
     "compile": "rm -rf dist && tsc",
-    "hitit": "npm run compile && npm publish",
+    "deploy": "npm run compile && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {

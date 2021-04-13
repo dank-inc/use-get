@@ -1,17 +1,17 @@
 import { useCallback, useEffect, useState } from "react";
 import { Response } from "./types";
 
-type Get = () => Promise<void>;
-
+// TODO: Objects
 type Res<T> =
-  // Data | Error | Loading | Get
-  [T, null, false, Get] | [null, null, true, Get] | [null, string, false, Get];
+  | { data: T; error: null; loading: false }
+  | { data: null; error: null; loading: true }
+  | { data: null; error: string; loading: false };
 
 type Props<T> = {
   endpointFn: () => Promise<Response<T>>;
 };
 
-export const useApi = <T>({ endpointFn }: Props<T>): Res<T> => {
+export const usePromise = <T>(promise: Promise<T>): Res<T> => {
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -19,12 +19,8 @@ export const useApi = <T>({ endpointFn }: Props<T>): Res<T> => {
     setError(null);
 
     try {
-      const res = await endpointFn();
-      if (res.status === 200) {
-        setData(res.data);
-        return;
-      }
-      throw new Error(res.statusText);
+      const data = await promise;
+      setData(data);
     } catch (err) {
       setError(err);
     } finally {
@@ -33,9 +29,9 @@ export const useApi = <T>({ endpointFn }: Props<T>): Res<T> => {
 
   useEffect(() => {
     get();
-  }, [endpointFn]);
+  }, [promise]);
 
-  if (data) return [data, null, false, get];
-  if (error) return [null, error, false, get];
-  return [null, null, true, get];
+  if (data) return { data, error: null, loading: false };
+  if (error) return { data: null, error, loading: false };
+  return { data: null, error: null, loading: true };
 };
