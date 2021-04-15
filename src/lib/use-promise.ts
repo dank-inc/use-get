@@ -1,15 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { Response } from "../types";
 
-// TODO: Objects
 type Res<T> =
   | { data: T; error: null; loading: false }
   | { data: null; error: null; loading: true }
   | { data: null; error: string; loading: false };
-
-type Props<T> = {
-  endpointFn: () => Promise<Response<T>>;
-};
 
 export const usePromise = <T>(promise: Promise<T>): Res<T> => {
   const [data, setData] = useState<T | null>(null);
