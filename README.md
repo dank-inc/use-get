@@ -18,6 +18,7 @@ import { useGet } from '@dank-inc/use-get'
 export const UserPage = () => {
   const { api } = useAppContext()
   const users = usePromise(api.getUsers()) 
+
   if(users.loading) return <Loading>Getting Users...</Loading>
   if(users.error) return <Error>Coulnd't get users. Message: {error}</Error>
 
@@ -37,6 +38,7 @@ import { useGet } from '@dank-inc/use-get'
 
 export const UserPage = () => {
   const users = useGet('users') // uses `request` to get an endpoint
+  
   if(users.loading) return <Loading>Getting Users...</Loading>
   if(users.error) return <Error>Coulnd't get users. Message: {error}</Error>
 
