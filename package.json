@@ -1,6 +1,6 @@
 {
   "name": "@dank-inc/use-get",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "author": "Elijah Lucian",
   "description": "A few typscript react hook to get you that sweet sweet data from an endpoint.",
   "repository": {

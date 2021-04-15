@@ -1,5 +1,7 @@
 # Use Get
 
+[![https://nodei.co/npm/@dank-inc/use-get.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/@dank-inc/use-get.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/@dank-inc/use-get)
+
 A simple typscript react hook to get you that sweet sweet data from an endpoint. It has a little state manager built in to make things simple.
 
 Forget having to mess up your templates with an ugly useEffect!
